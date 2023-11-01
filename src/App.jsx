@@ -1,17 +1,23 @@
 import "./App.css";
+import { Routes, Route, Outlet, Link } from "react-router-dom";
+import NotFound from "./pages/NotFound";
+import Home from "./pages/Home";
+import { Contact } from "./pages/Contact";
+import Layout from "./components/Layout";
 
 function App() {
 	return (
-		<article className="text-left prose prose-xl mx-auto">
-			<h1>Garlic bread with cheese: What the science tells us</h1>
-			<p>
-				For years parents have espoused the health benefits of eating garlic bread with cheese to their children, with the food earning such
-				an iconic status in our culture that kids will often dress up as warm, cheesy loaf for Halloween.
-			</p>
-			<p>
-				But a recent study shows that the celebrated appetizer may be linked to a series of rabies cases springing up around the country.
-			</p>
-		</article>
+		<Routes>
+			<Route path="/" element={<Layout />}>
+				<Route index element={<Home />} />
+				<Route path="contact" element={<Contact />} />
+
+				{/* Using path="*"" means "match anything", so this route
+                acts like a catch-all for URLs that we don't have explicit
+                routes for. */}
+				<Route path="*" element={<NotFound />} />
+			</Route>
+		</Routes>
 	);
 }
 
