@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import { Contact } from "./pages/Contact";

@@ -1,4 +1,4 @@
-import { Button, Menu, Navbar } from "react-daisyui";
+import { Menu, Navbar } from "react-daisyui";
 import { Link, NavLink, Outlet } from "react-router-dom";
 
 export default function Layout() {
